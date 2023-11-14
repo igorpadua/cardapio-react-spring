@@ -1,15 +1,20 @@
 package com.igor.cardapio.model
 
+
+import com.igor.cardapio.dto.FoodRequestDTO
 import groovy.transform.Canonical
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import groovy.transform.TypeChecked
+import jakarta.persistence.*
+import lombok.AllArgsConstructor
+import lombok.EqualsAndHashCode
+import lombok.NoArgsConstructor
 
 @Table
 @Entity
-@Canonical
+@TypeChecked
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +22,14 @@ class Food {
     String title;
     String image;
     Integer price;
+
+    Food(FoodRequestDTO foodDTO) {
+        this.title = foodDTO.title;
+        this.image = foodDTO.image;
+        this.price = foodDTO.price;
+    }
+
+    Food() {
+
+    }
 }

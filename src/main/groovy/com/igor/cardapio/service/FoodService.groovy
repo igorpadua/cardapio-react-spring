@@ -1,5 +1,6 @@
 package com.igor.cardapio.service
 
+import com.igor.cardapio.model.Food
 import com.igor.cardapio.repository.FoodRepository
 import groovy.transform.TypeChecked
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,5 +14,9 @@ class FoodService {
 
     List getAll() {
         return repository.findAll();
+    }
+
+    void saveFood(Food food) {
+        repository.save(food);
     }
 }
