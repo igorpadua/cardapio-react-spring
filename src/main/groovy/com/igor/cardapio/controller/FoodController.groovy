@@ -16,12 +16,14 @@ class FoodController {
     @Autowired
     FoodService service;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
     void saveFood(@RequestBody FoodRequestDTO foodDTO) {
         Food food = new Food(foodDTO)
         service.saveFood(food)
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     List<FoodResponseDTO> getAll() {
         List<FoodResponseDTO> foodList = service.getAll().stream().map(FoodResponseDTO::new).toList()
