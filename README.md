@@ -11,4 +11,4 @@ Feito a partir do vídeo da Fernanda Kipper | Dev.
 
 * Spring boot;
 * Postgres;
-* Rect.
+* React.
