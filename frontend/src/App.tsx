@@ -23,7 +23,7 @@ function App() {
                         image={foodData.image}
                     />
                 )}
-                {iosModalOpen && <CreateModal/>}
+                {iosModalOpen && <CreateModal closeModal={handleOpenModal}/>}
                 <button onClick={handleOpenModal}>Novo</button>
             </div>
         </div>
